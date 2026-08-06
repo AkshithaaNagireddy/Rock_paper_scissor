@@ -12,6 +12,7 @@ An interactive, responsive Arcade-style **Rock Paper Scissors** web application 
 - **Keyboard Controls**: Quick move input using keyboard keys (`R` for Rock, `P` for Paper, `S` for Scissors).
 - **Match Conclusion Overlay**: Victory and Game Over pop-up modals complete with an dynamic Canvas confetti particle animation.
 
+**Pages :** https://akshithaanagireddy.github.io/Rock_paper_scissor/
 
 ## 📁 File Structure
 
@@ -20,3 +21,5 @@ rock-paper-scissors/
 ├── index.html   # Main HTML structure
 ├── style.css    # Responsive styling & theme variables
 └── script.js    # Game logic, timer, state management & confetti animation
+
+
