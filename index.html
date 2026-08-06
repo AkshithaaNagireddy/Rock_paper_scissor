@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="game-container">
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Header Section -->
+    <div class="top-bar">
+      <span>Round: <strong id="round-num">1</strong></span>
+      <button class="theme-toggle" id="theme-btn">
+        <span id="theme-icon">☀️</span>
+        <span id="theme-text">Light Mode</span>
+      </button>
+    </div>
+
+    <h1 class="main-title">ROCK PAPER SCISSORS</h1>
+    <p class="sub-title">★ First to 5 Points Wins the Match! ★</p>
+
+    <!-- Scoreboard -->
+    <div class="scoreboard">
+      <div class="score-box">
+        <div class="score-label player-label">👤 PLAYER</div>
+        <div class="score-val" id="player-score">00</div>
+      </div>
+      <div class="score-divider"></div>
+      <div class="score-box">
+        <div class="score-label computer-label">🤖 COMPUTER</div>
+        <div class="score-val" id="computer-score">00</div>
+      </div>
+    </div>
+
+    <!-- Move Selections -->
+    <div class="choices-grid">
+      <button class="choice-btn" data-choice="rock">
+        <span class="choice-icon">✊</span>
+        <span class="choice-name">ROCK [R]</span>
+      </button>
+      <button class="choice-btn" data-choice="paper">
+        <span class="choice-icon">✋</span>
+        <span class="choice-name">PAPER [P]</span>
+      </button>
+      <button class="choice-btn" data-choice="scissors">
+        <span class="choice-icon">✌️</span>
+        <span class="choice-name">SCISSORS [S]</span>
+      </button>
+    </div>
+
+    <!-- Active Match VS Area with Timer Display -->
+    <div class="vs-container">
+      <div class="vs-slot">
+        <span class="vs-slot-label">👤 YOU</span>
+        <div class="vs-badge" id="player-badge">❓</div>
+      </div>
+      
+      <div class="vs-center">
+        <span class="vs-text" id="vs-label">VS</span>
+        <div class="timer-display hidden" id="timer-display">3</div>
+      </div>
+
+      <div class="vs-slot">
+        <span class="vs-slot-label">🤖 BOT</span>
+        <div class="vs-badge" id="computer-badge">❓</div>
+      </div>
+    </div>
+
+    <!-- Round Status Banner -->
+    <div class="round-status" id="status-text">
+      Choose Rock, Paper, or Scissors to Start!
+    </div>
+
+    <!-- Overall Game Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-val" id="stat-wins">0</div>
+        <div class="stat-lbl">Wins</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" id="stat-losses">0</div>
+        <div class="stat-lbl">Losses</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" id="stat-draws">0</div>
+        <div class="stat-lbl">Draws</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" id="stat-winrate">0%</div>
+        <div class="stat-lbl">Win Rate</div>
+      </div>
+    </div>
+
+    <!-- History Log -->
+    <div class="recent-section">
+      <div class="recent-title">↺ Recent Rounds</div>
+      <div class="history-list" id="history-list"></div>
+    </div>
+
+    <!-- Control Actions -->
+    <div class="action-buttons">
+      <button class="action-btn" id="new-match-btn">↺ NEW MATCH</button>
+      <button class="action-btn btn-reset" id="reset-score-btn">■ RESET SCORE</button>
+    </div>
+
+    <!-- Popup Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+      <div class="modal-card">
+        <div class="modal-icon" id="modal-icon">🏆</div>
+        <div class="modal-title" id="modal-title">YOU ARE THE CHAMPION!</div>
+        <div class="modal-desc" id="modal-desc">You won the match 5 - 4! Excellent gameplay.</div>
+        <button class="modal-btn" id="modal-play-again">▶ Play Again</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
